@@ -1,0 +1,6 @@
+- Name: CelesteTAS
+  Version: 3.47.1
+  DLL: Celeste.Mods.Tas.dll
+  Dependencies:
+    - Name: EverestCore
+      Version: 1.5935.0

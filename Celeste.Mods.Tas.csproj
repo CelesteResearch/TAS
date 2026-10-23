@@ -1,0 +1,57 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="../../Shared/Directory.Build.props" />
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <LangVersion>14.0</LangVersion>
+        <Nullable>annotations</Nullable>
+        <AssemblyName>Celeste.Mods.Tas</AssemblyName>
+        <RootNamespace>Celeste.Mods.Tas</RootNamespace>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <UseSharedCompilation>false</UseSharedCompilation>
+        <ShouldUnsetParentConfigurationAndPlatform>false</ShouldUnsetParentConfigurationAndPlatform>
+    </PropertyGroup>
+    <ItemGroup>
+        <ProjectReference Include="../../Shared/src/Celeste.Compression.Archives/Celeste.Compression.Archives.csproj" />
+        <ProjectReference Include="../../Shared/src/Celeste.Input.Gameplay/Celeste.Input.Gameplay.csproj" />
+        <ProjectReference Include="../../Shared/src/Celeste.Core/Celeste.Core.csproj" />
+        <ProjectReference Include="../../Shared/src/Celeste.Audio/Celeste.Audio.csproj" />
+        <ProjectReference Include="../../Shared/src/Celeste.Scene/Celeste.Scene.csproj" />
+        <ProjectReference Include="../../Shared/src/Celeste.Game/Celeste.Game.csproj" />
+        <ProjectReference Include="../../Shared/src/Celeste.Everest/Celeste.Everest.csproj" />
+        <ProjectReference Include="../../Shared/src/Celeste.Everest.Detours/Celeste.Everest.Detours.csproj" />
+        <ProjectReference Include="../../Shared/src/Celeste.Simulation/Celeste.Simulation.csproj" />
+        <ProjectReference Include="../../Shared/src/Celeste.Graphics/Celeste.Graphics.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+        <Reference Include="YamlDotNet">
+            <HintPath>../../Shared/lib/Everest/YamlDotNet.dll</HintPath>
+            <Private>true</Private>
+        </Reference>
+        <PackageReference Include="Mono.Cecil" Version="$(MonoCecilVersion)" />
+        <PackageReference Include="MonoMod.Backports" Version="$(MonoModBackportsVersion)" Aliases="MonoModBackports" />
+        <PackageReference Include="MonoMod.Core" Version="$(MonoModCoreVersion)" />
+        <PackageReference Include="MonoMod.RuntimeDetour" Version="$(MonoModRuntimeDetourVersion)" />
+        <ProjectReference Include="../../Shared/src/../vendor/MonoMod/src/MonoMod.Utils/MonoMod.Utils.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="System.Text.Json" Version="8.0.5" />
+        <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.1.2" />
+        <PackageReference Include="System.Collections.Immutable" Version="8.0.0" />
+        <PackageReference Include="JetBrains.Annotations" Version="2023.3.0" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="../../Shared/src/Celeste.Input/Celeste.Input.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="../../Shared/src/Celeste.Framework/Celeste.Framework.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="../../Shared/src/Celeste.Game.Runtime/Celeste.Game.Runtime.csproj" />
+        <ProjectReference Include="StudioCommunication/Celeste.Tas.StudioCommunication.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Remove="StudioCommunication/**/*.cs" />
+        <Compile Remove="SettingsFormat/**/*.cs" />
+    </ItemGroup>
+</Project>
